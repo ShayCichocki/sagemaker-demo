@@ -46,7 +46,7 @@ def _get_train_data_loader(batch_size, training_dir):
     print("Get train data loader.")
 
     train_data = pd.read_csv(os.path.join(training_dir, "train.csv"), header=None, names=None)
-    train_data = train_sample.dropna()	
+    train_data = train_data.dropna()	
     train_y = torch.from_numpy(train_data[[0]].values).float().squeeze()
     train_X = torch.from_numpy(train_data.drop([0], axis=1).values).long()
 

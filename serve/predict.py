@@ -82,6 +82,6 @@ def predict_fn(input_data, model):
 
     # Make sure to put the model into evaluation mode
     model.eval()
-    result = torch.round(model(data)).detach().numpy().astype(int)
+    result = torch.round(model(data)).detach().numpy().astype(float)
 
     return result
